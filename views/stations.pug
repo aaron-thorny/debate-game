@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= text.title
+    for line in text.content
+        p= line
+
+    +teamSelect(teams)
+    block actions
+    

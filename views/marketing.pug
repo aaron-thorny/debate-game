@@ -1,0 +1,9 @@
+extends stations
+
+block actions
+    .form-group
+        label(for='marketlvl') Select Marketing level
+        select#marketlvl.form-control
+            for marketlvl in marketlvls
+                option= marketlvl.name
+    button.btn.btn-success.btn-lg.btn-block(type='button') Buy Now!

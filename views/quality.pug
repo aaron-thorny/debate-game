@@ -1,0 +1,9 @@
+extends stations
+
+block actions
+    .form-group
+        label(for='qualitylvl') Select Quality level
+        select#qualitylvl.form-control
+            for qualitylvl in qualitylvls
+                option= qualitylvl.name
+    button.btn.btn-success.btn-lg.btn-block(type='button') Buy Now!

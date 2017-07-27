@@ -1,0 +1,13 @@
+extends stations
+
+block actions
+    .form-group
+        label(for='attacktype') Attack Type
+        select#attacktype.form-control
+            option Funds
+            option Quality
+            option Marketing
+    .form-group
+        label(for='attackvalue') Attack Value
+        input#attackvalue.form-control(type='attack', placeholder='Attack Value')
+    button.btn.btn-success.btn-lg.btn-block(type='button') Purchase

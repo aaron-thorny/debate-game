@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+    include includes/mixin.pug
+
+  body
+    nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+      button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      a.navbar-brand(href='/') Home
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='http://club1914.org/')
+              | Club 1914 
+              span.sr-only (current)
+          li.nav-item.active
+            a.nav-link(href='http://www.ncfca.org/what-we-do/speech-and-debate-competition/debate/') 
+              | NCFCA debate
+              span.sr-only (current)
+        //- div.col
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            button.btn.btn-primary(type='button', data-toggle='modal', data-target='#signinmodal')
+              | Sign In 
+            #signinmodal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='signinmodal', aria-hidden='true')
+              .modal-dialog(role='document')
+                .modal-content
+                  .modal-header
+                    h5#exampleModalLabel.modal-title Sign In
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                      span(aria-hidden='true') ×
+                  .modal-body
+                    .form-group
+                      label(for='username') Username
+                      input#bribevalue.form-control(type='username', placeholder='Username')
+                    .form-group
+                       label(for='Password') Password
+                       input#bribevalue.form-control(type='password', placeholder='Password')
+                  .modal-footer
+                    button.btn.btn-primary.btn-block(type='button', data-dismiss='modal') Enter
+    block content
+
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')

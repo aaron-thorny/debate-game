@@ -1,0 +1,6 @@
+mixin teamSelect(teams)
+    .form-group
+        label(for='team-select') Select Team
+        select#team-select.form-control
+            for team in teams
+                option= team.name

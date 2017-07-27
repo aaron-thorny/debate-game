@@ -1,0 +1,10 @@
+extends stations
+
+block actions
+    .form-group
+        label(for='loanlevel') Loan Level
+        select#loanlevel.form-control
+            option 500K at 5%
+            option 1M at 10%
+            option 2M at 15%
+    button.btn.btn-success.btn-lg.btn-block(type='button') Purchase
