@@ -40,7 +40,6 @@ module.exports= (() => {
                 'Select the team name they wish to attack and if they want to attack the funds, quality, or marketing. ',
                 'Enter the amount of the attack',
                 'For attacks on quality or marketing, the mafia takes 25% cut. Meaning only 75% of the atack goes towards hurting the other team.',
-                'For attacks on funds, the attacking team gets no return.',
                 'Select "Purchase"',
             ]
         },

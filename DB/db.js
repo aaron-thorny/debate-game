@@ -1,84 +1,91 @@
 module.exports = (() => {
     return {
-        trumpUniv: {
+        trumpUniv1: {
             name: "Trump University",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        bartletteUniv: {
+        
+        bartletteUniv2: {
             name: "Bartlette University",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        truckeeUniv: {
+        
+        truckeeUniv3: {
             name: "Truckee University",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        fayleUniv: {
+        
+        fayleUniv4: {
             name: "Fayle University",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        memeUniv: {
+        
+        memeUniv5: {
             name: "University of Memeology",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        clownUniv: {
+        
+        clownUniv6: {
             name: "Clown University",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        goodenoughCol: {
-            name: "Goodenough College",
-            marketing: {
-                level: 1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+        
+        goodenoughUniv7: {
+            name: "Goodenough University",
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         },
-        chrisisdumCol: {
-            name: "Chrisisdum College",
-            marketing: {
-                level:1,
-                price: 250
-            },
-            bank: {
-                amount: 1000
-            }
+        
+        chrisisdumUniv8: {
+            name: "Chrisisdum University",
+            marketlvl: 1,
+            qualitylvl: 1,
+            totalmoney: 1000,
+            netrevenue: 150,
+            debtamount: 0,
+            interest: 0,
+            bribeamount: 0,
         }
     }
 })()

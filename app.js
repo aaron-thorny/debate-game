@@ -4,6 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var sequelize = require('sequelize');
+
+var passport = require('./passport');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -13,6 +17,7 @@ var mafia = require('./routes/mafia');
 var bank = require('./routes/bank');
 var quality = require('./routes/quality');
 var teams = require('./routes/teams');
+var login = require('./db/sequel').login
 
 
 var app = express();
@@ -27,7 +32,42 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  saveUninitialized: false,
+  resave: false,
+  secret: 'sekret'
+}))
+app.use(passport.initialize());
+app.use(passport.session())
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.post('/login', passport.authenticate('local'), (req, res) => {
+  console.log("logging in" + JSON.stringify(req.user.role))
+  res.redirect(`/${req.user.role}`)
+})
+
+app.use((req, res, next) => {
+  if (req.user){
+    console.log(req.user.username)
+    if (req.user.role.toLowerCase() == 'team') {
+      var teamSite = encodeURI(`/teams/${req.user.username}`)
+      if(req.path == teamSite)
+        next()
+      else
+        res.redirect(teamSite)
+    } 
+    else if (`/${req.user.role}` == req.path)
+      next()
+    else
+      res.redirect(`/${req.user.role}`)
+  } else {
+    if(req.path == '/')
+      next()
+    else
+      res.redirect('/')
+  }
+})
 
 app.use('/', index);
 app.use('/users', users);
@@ -37,7 +77,6 @@ app.use('/mafia', mafia);
 app.use('/bank', bank);
 app.use('/quality', quality);
 app.use('/teams', teams);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,5 +95,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;

@@ -25,25 +25,28 @@ html
         ul.navbar-nav.ml-auto
           li.nav-item.active
             button.btn.btn-primary(type='button', data-toggle='modal', data-target='#signinmodal')
-              | Sign In 
-            #signinmodal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='signinmodal', aria-hidden='true')
-              .modal-dialog(role='document')
-                .modal-content
-                  .modal-header
-                    h5#exampleModalLabel.modal-title Sign In
-                    button.close(type='button', data-dismiss='modal', aria-label='Close')
-                      span(aria-hidden='true') ×
-                  .modal-body
-                    .form-group
-                      label(for='username') Username
-                      input#bribevalue.form-control(type='username', placeholder='Username')
-                    .form-group
-                       label(for='Password') Password
-                       input#bribevalue.form-control(type='password', placeholder='Password')
-                  .modal-footer
-                    button.btn.btn-primary.btn-block(type='button', data-dismiss='modal') Enter
+              | Sign In
     block content
 
-    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+    script(src='http://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+    script(src='/javascripts/main.js')
+
+#signinmodal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='signinmodal', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5#exampleModalLabel.modal-title Sign In
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      form(method="POST" action='/login')
+        .modal-body
+          .form-group
+            label(for='username') Username
+            input#username.form-control(name="username", type='text', placeholder='Username')
+          .form-group
+              label(for='password') Password
+              input#password.form-control(name="password", type='password', placeholder='Password')
+        .modal-footer
+          button#signin.btn.btn-primary.btn-block(type='submit') Enter

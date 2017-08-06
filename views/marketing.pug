@@ -5,5 +5,8 @@ block actions
         label(for='marketlvl') Select Marketing level
         select#marketlvl.form-control
             for marketlvl in marketlvls
-                option= marketlvl.name
-    button.btn.btn-success.btn-lg.btn-block(type='button') Buy Now!
+                //- if teams.marketlvl == marketlvl.level
+                //-     option(selected)= marketlvl.name
+                //- else
+                option(value=marketlvl.level)= marketlvl.name
+    button#buyMarketLvl.btn.btn-success.btn-lg.btn-block(type='button') Buy Now!
