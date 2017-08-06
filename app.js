@@ -17,7 +17,7 @@ var mafia = require('./routes/mafia');
 var bank = require('./routes/bank');
 var quality = require('./routes/quality');
 var teams = require('./routes/teams');
-var login = require('./db/sequel').login
+var login = require('./DB/sequel').login
 
 
 var app = express();
